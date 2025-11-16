@@ -8,7 +8,7 @@ export const Header = () => {
     <header className="header__container">
       <div className="header__content">
         <div className="header__left">
-          <Link to="/" className="header__logo_link">
+          <Link to="/" className="header__logo_link" data-testid="logo-link">
             <img className="header__logo" src="/logo.png" alt="ITX logo" />
           </Link>
           <Breadcrumb />
