@@ -7,7 +7,9 @@ vi.mock('@tanstack/query-async-storage-persister', () => ({
 }));
 
 vi.mock('@tanstack/react-query-persist-client', () => ({
-  PersistQueryClientProvider: ({ children }) => <div data-testid="query-provider">{children}</div>,
+  PersistQueryClientProvider: ({ children }) => (
+    <div data-testid="query-provider">{children}</div>
+  ),
 }));
 
 vi.mock('./query-client', () => ({

@@ -7,10 +7,14 @@ describe('axiosInstance', () => {
   });
 
   it('should have correct baseURL', () => {
-    expect(axiosInstance.defaults.baseURL).toBe(import.meta.env.VITE_API_BASE_URL);
+    expect(axiosInstance.defaults.baseURL).toBe(
+      import.meta.env.VITE_API_BASE_URL
+    );
   });
 
   it('should have correct default headers', () => {
-    expect(axiosInstance.defaults.headers['Content-Type']).toBe('application/json');
+    expect(axiosInstance.defaults.headers['Content-Type']).toBe(
+      'application/json'
+    );
   });
 });

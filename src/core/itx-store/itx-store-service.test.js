@@ -8,7 +8,9 @@ describe('itx-store-service', () => {
   describe('getProductList', () => {
     it('should call ItxStoreRepository.getProductList', async () => {
       const mockProducts = [{ id: 1, name: 'Product 1' }];
-      vi.mocked(ItxStoreRepository.getProductList).mockResolvedValue(mockProducts);
+      vi.mocked(ItxStoreRepository.getProductList).mockResolvedValue(
+        mockProducts
+      );
 
       const result = await getProductList();
 

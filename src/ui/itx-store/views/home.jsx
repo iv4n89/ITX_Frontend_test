@@ -5,7 +5,7 @@ import { useSearch } from '../hooks/use-search/use-search';
 
 export const HomePage = () => {
   const { data, isLoading } = useListProducts();
-  const {searchTerm, setSearchTerm, filteredData} = useSearch(data);
+  const { searchTerm, setSearchTerm, filteredData } = useSearch(data);
 
   return (
     <>

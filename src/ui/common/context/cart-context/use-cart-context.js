@@ -3,7 +3,7 @@ import { CartContext } from './cart-context';
 
 /**
  * Custom hook to access the Cart context
- * 
+ *
  * @returns {{
  *   cart: Array<Object>,
  *   addToCart: (item: Object) => void,

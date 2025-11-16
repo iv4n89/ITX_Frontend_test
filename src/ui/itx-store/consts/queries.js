@@ -1,4 +1,3 @@
-
 export const QUERIES = {
-    LIST_PRODUCTS: 'list-products',
-}
+  LIST_PRODUCTS: 'list-products',
+};

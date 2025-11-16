@@ -23,7 +23,9 @@ describe('useSearch', () => {
     });
 
     expect(result.current.searchTerm).toBe('apple');
-    expect(result.current.filteredData).toEqual([{ brand: 'Apple', model: 'iPhone 14' }]);
+    expect(result.current.filteredData).toEqual([
+      { brand: 'Apple', model: 'iPhone 14' },
+    ]);
   });
 
   it('should filter data by model', () => {
@@ -33,7 +35,9 @@ describe('useSearch', () => {
       result.current.setSearchTerm('pixel');
     });
 
-    expect(result.current.filteredData).toEqual([{ brand: 'Google', model: 'Pixel 7' }]);
+    expect(result.current.filteredData).toEqual([
+      { brand: 'Google', model: 'Pixel 7' },
+    ]);
   });
 
   it('should return all data when search term is empty', () => {
@@ -67,6 +71,8 @@ describe('useSearch', () => {
       result.current.setSearchTerm('SAMSUNG');
     });
 
-    expect(result.current.filteredData).toEqual([{ brand: 'Samsung', model: 'Galaxy S23' }]);
+    expect(result.current.filteredData).toEqual([
+      { brand: 'Samsung', model: 'Galaxy S23' },
+    ]);
   });
 });

@@ -17,12 +17,12 @@ describe('Layout', () => {
 
   it('should render a link to home page in Header', () => {
     render(
-        <MemoryRouter>
-            <Layout />
-        </MemoryRouter>
+      <MemoryRouter>
+        <Layout />
+      </MemoryRouter>
     );
 
     const logoLinkg = screen.getByTestId('logo-link');
     expect(logoLinkg.getAttribute('href')).toBe('/');
-  })
+  });
 });
