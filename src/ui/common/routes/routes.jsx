@@ -1,4 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
+import { Layout } from '../components/layout/layout';
+import { HomePage } from '@/ui/itx-store/views/home';
 
 /**
  * Application routes configuration
@@ -7,11 +9,11 @@ import { createBrowserRouter } from 'react-router-dom';
 const routes = [
   {
     path: '/',
-    Component: <></>,
+    Component: Layout,
     children: [
       {
         index: true,
-        element: <></>,
+        element: <HomePage />,
       },
     ],
   },
