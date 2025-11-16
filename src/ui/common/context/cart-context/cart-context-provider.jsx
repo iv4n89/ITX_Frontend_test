@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
     setCart((prev) => [...prev, item]);
   };
 
-  // Addtional cart manipulation functions can be added here
+  // Additional cart manipulation functions can be added here
   // Not needed for the current test
 
   const itemCount = cart.length;

@@ -22,7 +22,7 @@ describe('Layout', () => {
       </MemoryRouter>
     );
 
-    const logoLinkg = screen.getByTestId('logo-link');
-    expect(logoLinkg.getAttribute('href')).toBe('/');
+    const logoLink = screen.getByTestId('logo-link');
+    expect(logoLink.getAttribute('href')).toBe('/');
   });
 });
