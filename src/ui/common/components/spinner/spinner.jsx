@@ -3,7 +3,7 @@ import './spinner.css';
 /**
  * Spinner component to indicate loading state
  * @param {{size: 'small' | 'medium' | 'large', color: string}} options
- * @returns A animated spinner
+ * @returns An animated spinner
  */
 export const Spinner = ({ size = 'medium', color = 'white' }) => {
   return (

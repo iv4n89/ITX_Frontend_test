@@ -3,7 +3,6 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useProductDetails } from './use-product-details';
 import { getProductDetails } from '@/core/itx-store/itx-store-service';
-import { QUERIES } from '../../consts/queries';
 
 vi.mock('@/core/itx-store/itx-store-service');
 

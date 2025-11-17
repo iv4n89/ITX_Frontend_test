@@ -47,7 +47,7 @@ export const ProductSpecs = ({ data }) => {
       )}
       {data.dimentions && (
         <li>
-          <strong>Dimentions:</strong>
+          <strong>Dimensions:</strong>
           {data.dimentions}
         </li>
       )}

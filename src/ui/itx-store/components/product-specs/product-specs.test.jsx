@@ -32,7 +32,7 @@ describe('ProductSpecs', () => {
     expect(screen.getByText('48MP')).toBeDefined();
     expect(screen.getByText('Front Camera:')).toBeDefined();
     expect(screen.getByText('12MP')).toBeDefined();
-    expect(screen.getByText('Dimentions:')).toBeDefined();
+    expect(screen.getByText('Dimensions:')).toBeDefined();
     expect(screen.getByText('150x75x8mm')).toBeDefined();
     expect(screen.getByText('Weight:')).toBeDefined();
     expect(screen.getByText('200g')).toBeDefined();
