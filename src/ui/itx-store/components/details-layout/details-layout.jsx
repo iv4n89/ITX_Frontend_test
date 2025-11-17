@@ -5,7 +5,7 @@ import { Product } from '../product/product';
 import './details-layout.css';
 
 export const DetailsLayout = ({ product, isLoading }) => {
-  if (isLoading) {
+  if (isLoading || !product) {
     return (
       <div className="details_layout__container">
         <div className="details_layout__image">
@@ -34,13 +34,7 @@ export const DetailsLayout = ({ product, isLoading }) => {
       </div>
       <div className="details_layout__content">
         <Product data={product} />
-        <Actions
-          productId={product.id}
-          options={{
-            storage: product.internalMemory,
-            colors: product.colors,
-          }}
-        />
+        <Actions productId={product.id} options={product.options} />
       </div>
     </div>
   );
