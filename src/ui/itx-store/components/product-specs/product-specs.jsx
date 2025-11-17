@@ -23,7 +23,7 @@ export const ProductSpecs = ({ data }) => {
       )}
       {data.displayResolution && (
         <li>
-          <strong>Resolution:</strong>
+          <strong>Screen:</strong>
           {data.displayResolution}
         </li>
       )}

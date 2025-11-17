@@ -24,7 +24,7 @@ describe('ProductSpecs', () => {
     expect(screen.getByText('16GB')).toBeDefined();
     expect(screen.getByText('OS:')).toBeDefined();
     expect(screen.getByText('Android 12')).toBeDefined();
-    expect(screen.getByText('Resolution:')).toBeDefined();
+    expect(screen.getByText('Screen:')).toBeDefined();
     expect(screen.getByText('1900x1080')).toBeDefined();
     expect(screen.getByText('Battery:')).toBeDefined();
     expect(screen.getByText('5000mAh')).toBeDefined();
@@ -51,7 +51,7 @@ describe('ProductSpecs', () => {
     expect(screen.getByText('RAM:')).toBeDefined();
     expect(screen.getByText('8GB')).toBeDefined();
     expect(screen.queryByText('OS:')).toBeNull();
-    expect(screen.queryByText('Resolution:')).toBeNull();
+    expect(screen.queryByText('Screen:')).toBeNull();
   });
 
   it('should render empty list when no data is provided', () => {
