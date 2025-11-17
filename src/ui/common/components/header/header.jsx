@@ -4,6 +4,10 @@ import './header.css';
 import { CartIcon } from '../cart-icon/cart-icon';
 import { useCart } from '../../context/cart-context/use-cart-context';
 
+/**
+ * Header component containing logo, breadcrumb, and cart icon
+ * @returns {JSX.Element}
+ */
 export const Header = () => {
   const { itemCount } = useCart();
 

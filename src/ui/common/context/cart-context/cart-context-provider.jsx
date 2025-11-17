@@ -3,6 +3,11 @@ import { CartContext } from './cart-context';
 
 const CART_STORAGE_KEY = 'itx-store-cart';
 
+/**
+ * CartProvider component to manage cart state and provide it via context
+ * @param {{ children: React.ReactNode }} params
+ * @returns {JSX.Element}
+ */
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = React.useState(() => {
     const stored = localStorage.getItem(CART_STORAGE_KEY);

@@ -2,6 +2,11 @@ import { useProductActions } from '@/ui/itx-store/hooks/use-product-actions/use-
 import './actions.css';
 import { Spinner } from '@/ui/common/components/spinner/spinner';
 
+/**
+ * Actions component to display product options and add to cart button
+ * @param {{ productId: string, options: object }} params
+ * @returns {JSX.Element}
+ */
 export const Actions = ({ productId, options }) => {
   const {
     colors,

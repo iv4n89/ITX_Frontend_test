@@ -2,6 +2,11 @@ import { Link, useLocation } from 'react-router-dom';
 import './breadcrumb.css';
 import React from 'react';
 
+/**
+ * Breadcrumb component to display navigation path
+ * @param {{ testid?: string }} params
+ * @returns {JSX.Element}
+ */
 export const Breadcrumb = ({ testid }) => {
   const location = useLocation();
 

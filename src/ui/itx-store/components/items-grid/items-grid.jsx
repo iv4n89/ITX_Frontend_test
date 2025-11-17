@@ -2,6 +2,11 @@ import { Skeleton } from '@/ui/common/components/skeleton/skeleton';
 import { Item } from '../item/item';
 import './items-grid.css';
 
+/**
+ * ItemsGrid component to display a grid of items
+ * @param {{ items: object[], isLoading: boolean, testid?: string }} params
+ * @returns {JSX.Element}
+ */
 export const ItemsGrid = ({ items, isLoading, testid }) => {
   if (isLoading) {
     return (
