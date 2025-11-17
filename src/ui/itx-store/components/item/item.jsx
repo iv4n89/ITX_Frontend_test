@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import { ItemImage } from '../item-image/item-image';
 import './item.css';
 
+/**
+ * Item component to display product information
+ * @param {{ id: string, imageSrc: string, brand: string, model: string, price: number }} params
+ * @returns {JSX.Element}
+ */
 export const Item = ({ id, imageSrc, brand, model, price }) => {
   return (
     <Link to={`/product/${id}`} className="item__card">

@@ -4,6 +4,11 @@ import { ItemImage } from '../item-image/item-image';
 import { Product } from '../product/product';
 import './details-layout.css';
 
+/**
+ * DetailsLayout component to display product details and actions
+ * @param {{ product: object, isLoading: boolean }} params
+ * @returns {JSX.Element}
+ */
 export const DetailsLayout = ({ product, isLoading }) => {
   if (isLoading || !product) {
     return (

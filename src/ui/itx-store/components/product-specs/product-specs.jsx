@@ -1,5 +1,10 @@
 import './product-specs.css';
 
+/**
+ * ProductSpecs component to display product specifications
+ * @param {{ data: object }} params
+ * @returns {JSX.Element}
+ */
 export const ProductSpecs = ({ data }) => {
   return (
     <ul className="product_info__specs_list">

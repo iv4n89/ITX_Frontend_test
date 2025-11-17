@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * Custom hook to manage search functionality
+ * @param {object[]} data - Array of products to search from
+ * @returns {{ searchTerm: string, setSearchTerm: function, filteredData: object[] }}
+ */
 export const useSearch = (data) => {
   const [searchTerm, setSearchTerm] = React.useState('');
 

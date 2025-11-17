@@ -1,6 +1,11 @@
 import { ProductSpecs } from '../product-specs/product-specs';
 import './product.css';
 
+/**
+ * Product component to display product information
+ * @param {{ data: object }} params
+ * @returns {JSX.Element}
+ */
 export const Product = ({ data }) => {
   return (
     <div className="product_info__container">
