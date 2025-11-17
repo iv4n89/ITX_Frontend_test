@@ -2,13 +2,16 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import { Header } from './header';
+import { CartProvider } from '../../context/cart-context/cart-context-provider';
 
 describe('Header', () => {
   it('should render the logo', () => {
     render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
+      <CartProvider>
+        <MemoryRouter>
+          <Header />
+        </MemoryRouter>
+      </CartProvider>
     );
 
     const logo = screen.getByAltText('ITX logo');
@@ -18,9 +21,11 @@ describe('Header', () => {
 
   it('should render a link to home page', () => {
     render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
+      <CartProvider>
+        <MemoryRouter>
+          <Header />
+        </MemoryRouter>
+      </CartProvider>
     );
 
     const logoLink = screen.getByTestId('logo-link');
@@ -29,9 +34,11 @@ describe('Header', () => {
 
   it('should render the header container', () => {
     render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
+      <CartProvider>
+        <MemoryRouter>
+          <Header />
+        </MemoryRouter>
+      </CartProvider>
     );
 
     const header = screen.getByRole('banner');
