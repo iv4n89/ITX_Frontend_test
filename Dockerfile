@@ -3,19 +3,14 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files
 COPY package*.json ./
 
-# Install dependencies
 RUN npm ci
 
-# Copy .env.example as .env for build-time environment variables
-COPY .env.example .env
-
-# Copy source code and configuration files
 COPY . .
 
-# Build the application (Vite will read .env file)
+RUN cp .env.example .env
+
 RUN npm run build
 
 # Production stage

@@ -16,7 +16,7 @@ Esta es una solución a la prueba técnica propuesta en el archivo [enunciado.pd
 
 ```bash
 # Levantar el proyecto
-make run
+make start
 
 # Ejecutar tests
 make test
@@ -30,7 +30,7 @@ La aplicación estará disponible en `http://localhost:3000`
 ## 📋 Comandos Disponibles
 
 ```bash
-make run    # Construir y ejecutar la aplicación
+make start    # Construir y ejecutar la aplicación
 make test   # Ejecutar tests en Docker
 make stop   # Detener y eliminar el contenedor
 make clean  # Limpiar contenedor e imágenes

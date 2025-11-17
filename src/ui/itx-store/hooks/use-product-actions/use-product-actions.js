@@ -5,10 +5,10 @@ import { useState, useMemo } from 'react';
 /**
  * Hook to manage product actions such as selecting storage and color, and adding to cart.
  * @param {string} productId
- * @param {{storages: string[], colors: string[]}} options
+ * @param {{storages: {code: number, name: string}[], colors: {code: number, name: string}[]}} options
  * @returns {{
- *  selectedStorage: string|null,
- *  selectedColor: string|null,
+ *  selectedStorage: number|null,
+ *  selectedColor: number|null,
  *  storages: string[],
  *  colors: string[],
  *  isAddToCartDisabled: boolean,
