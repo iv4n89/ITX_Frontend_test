@@ -21,16 +21,17 @@ export const ItemsGrid = ({ items, isLoading, testid }) => {
 
   return (
     <div className="items_grid" data-testid={testid}>
-      {items?.map((item) => (
-        <Item
-          key={item.id}
-          id={item.id}
-          imageSrc={item.imgUrl}
-          brand={item.brand}
-          model={item.model}
-          price={item.price}
-        />
-      ))}
+      {Array.isArray(items) &&
+        items.map((item) => (
+          <Item
+            key={item.id}
+            id={item.id}
+            imageSrc={item.imgUrl}
+            brand={item.brand}
+            model={item.model}
+            price={item.price}
+          />
+        ))}
     </div>
   );
 };

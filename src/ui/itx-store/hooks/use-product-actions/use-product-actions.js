@@ -5,10 +5,10 @@ import { useState, useMemo } from 'react';
 /**
  * Hook to manage product actions such as selecting storage and color, and adding to cart.
  * @param {string} productId
- * @param {{storage: string[], colors: string[]}} options
+ * @param {{storages: {code: number, name: string}[], colors: {code: number, name: string}[]}} options
  * @returns {{
- *  selectedStorage: string|null,
- *  selectedColor: string|null,
+ *  selectedStorage: number|null,
+ *  selectedColor: number|null,
  *  storages: string[],
  *  colors: string[],
  *  isAddToCartDisabled: boolean,
@@ -20,32 +20,32 @@ import { useState, useMemo } from 'react';
  */
 export const useProductActions = (productId, options) => {
   const [selectedStorage, setSelectedStorage] = useState(() => {
-    if (options?.storage?.length === 1) {
-      return options.storage[0];
+    if (options?.storages?.length === 1) {
+      return options.storages[0].code;
     }
     return null;
   });
   const [selectedColor, setSelectedColor] = useState(() => {
     if (options?.colors?.length === 1) {
-      return options.colors[0];
+      return options.colors[0].code;
     }
     return null;
   });
   const [isFetching, setIsFetching] = useState(false);
   const { addToCart: addToContextCart } = useCart();
 
-  const storages = useMemo(() => options?.storage || [], [options?.storage]);
+  const storages = useMemo(() => options?.storages || [], [options?.storages]);
 
   const colors = useMemo(() => options?.colors || [], [options?.colors]);
 
   const isAddToCartDisabled = !selectedStorage || !selectedColor || isFetching;
 
-  const handleStorageSelect = (storage) => {
-    setSelectedStorage(storage);
+  const handleStorageSelect = (storageCode) => {
+    setSelectedStorage(storageCode);
   };
 
-  const handleColorSelect = (colorId) => {
-    setSelectedColor(colorId);
+  const handleColorSelect = (colorCode) => {
+    setSelectedColor(colorCode);
   };
 
   const handleAddToCart = async () => {

@@ -16,66 +16,114 @@ describe('useProductActions', () => {
   });
 
   it('should initialize with null selections when multiple options available', () => {
-    const options = { storage: ['64GB', '128GB'], colors: ['red', 'blue'] };
+    const options = {
+      storages: [
+        { code: 2000, name: '64GB' },
+        { code: 2001, name: '128GB' },
+      ],
+      colors: [
+        { code: 1000, name: 'red' },
+        { code: 1001, name: 'blue' },
+      ],
+    };
     const { result } = renderHook(() =>
       useProductActions('product-1', options)
     );
 
     expect(result.current.selectedStorage).toBeNull();
     expect(result.current.selectedColor).toBeNull();
-    expect(result.current.storages).toEqual(['64GB', '128GB']);
-    expect(result.current.colors).toEqual(['red', 'blue']);
+    expect(result.current.storages).toEqual([
+      { code: 2000, name: '64GB' },
+      { code: 2001, name: '128GB' },
+    ]);
+    expect(result.current.colors).toEqual([
+      { code: 1000, name: 'red' },
+      { code: 1001, name: 'blue' },
+    ]);
     expect(result.current.isAddToCartDisabled).toBe(true);
   });
 
   it('should auto-select when only one storage option available', () => {
-    const options = { storage: ['128GB'], colors: ['red', 'blue'] };
+    const options = {
+      storages: [{ code: 2001, name: '128GB' }],
+      colors: [
+        { code: 1000, name: 'red' },
+        { code: 1001, name: 'blue' },
+      ],
+    };
     const { result } = renderHook(() =>
       useProductActions('product-1', options)
     );
 
-    expect(result.current.selectedStorage).toBe('128GB');
+    expect(result.current.selectedStorage).toBe(2001);
     expect(result.current.selectedColor).toBeNull();
   });
 
   it('should auto-select when only one color option available', () => {
-    const options = { storage: ['64GB', '128GB'], colors: ['red'] };
+    const options = {
+      storages: [
+        { code: 2000, name: '64GB' },
+        { code: 2001, name: '128GB' },
+      ],
+      colors: [{ code: 1000, name: 'red' }],
+    };
     const { result } = renderHook(() =>
       useProductActions('product-1', options)
     );
 
     expect(result.current.selectedStorage).toBeNull();
-    expect(result.current.selectedColor).toBe('red');
+    expect(result.current.selectedColor).toBe(1000);
   });
 
   it('should handle storage selection', () => {
-    const options = { storage: ['64GB', '128GB'], colors: ['red', 'blue'] };
+    const options = {
+      storages: [
+        { code: 2000, name: '64GB' },
+        { code: 2001, name: '128GB' },
+      ],
+      colors: [
+        { code: 1000, name: 'red' },
+        { code: 1001, name: 'blue' },
+      ],
+    };
     const { result } = renderHook(() =>
       useProductActions('product-1', options)
     );
 
     act(() => {
-      result.current.handleStorageSelect('128GB');
+      result.current.handleStorageSelect(2001);
     });
 
-    expect(result.current.selectedStorage).toBe('128GB');
+    expect(result.current.selectedStorage).toBe(2001);
   });
 
   it('should handle color selection', () => {
-    const options = { storage: ['64GB', '128GB'], colors: ['red', 'blue'] };
+    const options = {
+      storages: [
+        { code: 2000, name: '64GB' },
+        { code: 2001, name: '128GB' },
+      ],
+      colors: [
+        { code: 1000, name: 'red' },
+        { code: 1001, name: 'blue' },
+      ],
+    };
     const { result } = renderHook(() =>
       useProductActions('product-1', options)
     );
 
     act(() => {
-      result.current.handleColorSelect('blue');
+      result.current.handleColorSelect(1001);
     });
 
-    expect(result.current.selectedColor).toBe('blue');
+    expect(result.current.selectedColor).toBe(1001);
   });
 
   it('should add to cart successfully', async () => {
-    const options = { storage: ['128GB'], colors: ['red'] };
+    const options = {
+      storages: [{ code: 2001, name: '128GB' }],
+      colors: [{ code: 1000, name: 'red' }],
+    };
     addToCart.mockResolvedValue({ count: 1 });
 
     const { result } = renderHook(() =>
@@ -88,19 +136,22 @@ describe('useProductActions', () => {
 
     expect(addToCart).toHaveBeenCalledWith({
       id: 'product-1',
-      colorCode: 'red',
-      storageCode: '128GB',
+      colorCode: 1000,
+      storageCode: 2001,
     });
     expect(mockAddToContextCart).toHaveBeenCalledWith({
       id: 'product-1',
-      colorCode: 'red',
-      storageCode: '128GB',
+      colorCode: 1000,
+      storageCode: 2001,
     });
     expect(result.current.isFetching).toBe(false);
   });
 
   it('should not add to context cart when count is not 1', async () => {
-    const options = { storage: ['128GB'], colors: ['red'] };
+    const options = {
+      storages: [{ code: 2001, name: '128GB' }],
+      colors: [{ code: 1000, name: 'red' }],
+    };
     addToCart.mockResolvedValue({ count: 0 });
 
     const { result } = renderHook(() =>
@@ -116,7 +167,16 @@ describe('useProductActions', () => {
   });
 
   it('should not add to cart when disabled', async () => {
-    const options = { storage: ['64GB', '128GB'], colors: ['red', 'blue'] };
+    const options = {
+      storages: [
+        { code: 2000, name: '64GB' },
+        { code: 2001, name: '128GB' },
+      ],
+      colors: [
+        { code: 1000, name: 'red' },
+        { code: 1001, name: 'blue' },
+      ],
+    };
     const { result } = renderHook(() =>
       useProductActions('product-1', options)
     );
@@ -129,7 +189,10 @@ describe('useProductActions', () => {
   });
 
   it('should disable add to cart while fetching', async () => {
-    const options = { storage: ['128GB'], colors: ['red'] };
+    const options = {
+      storages: [{ code: 2001, name: '128GB' }],
+      colors: [{ code: 1000, name: 'red' }],
+    };
     addToCart.mockImplementation(
       () =>
         new Promise((resolve) => setTimeout(() => resolve({ count: 1 }), 100))

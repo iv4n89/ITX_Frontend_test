@@ -7,10 +7,18 @@ vi.mock('@/ui/itx-store/hooks/use-product-actions/use-product-actions');
 
 describe('Actions', () => {
   const mockUseProductActions = {
-    colors: ['Black', 'White', 'Blue'],
-    storages: ['128GB', '256GB', '512GB'],
-    selectedColor: 'Black',
-    selectedStorage: '128GB',
+    colors: [
+      { code: 1000, name: 'Black' },
+      { code: 1001, name: 'White' },
+      { code: 1002, name: 'Blue' },
+    ],
+    storages: [
+      { code: 2000, name: '128GB' },
+      { code: 2001, name: '256GB' },
+      { code: 2002, name: '512GB' },
+    ],
+    selectedColor: 1000,
+    selectedStorage: 2000,
     handleColorSelect: vi.fn(),
     handleStorageSelect: vi.fn(),
     handleAddToCart: vi.fn(),
