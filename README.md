@@ -1,10 +1,10 @@
 # ITX frontend test
 
-## Solución
+## 📝 Solución
 
 Esta es una solución a la prueba técnica propuesta en el archivo [enunciado.pdf](./enunciado.pdf).
 
-## Tecnologías utilizadas
+## 🛠️ Tecnologías utilizadas
 
 - **React 19** - Librería para construir interfaces de usuario
 - **React Router v7** - Enrutamiento del lado del cliente
@@ -17,7 +17,7 @@ Esta es una solución a la prueba técnica propuesta en el archivo [enunciado.pd
 - **Prettier** - Formateador de código
 - **Husky + lint-staged** - Pre-commit hooks para validación de código
 
-## Decisiones técnicas
+## 🏗️ Decisiones técnicas
 
 ### TanStack Query (React Query)
 
@@ -42,9 +42,9 @@ El proyecto sigue una arquitectura en capas:
 
 **Nota importante**: La API al agregar productos al carrito siempre devuelve `count: 1` independientemente de la cantidad real de items. Por esta razón, en lugar de persistir directamente el dato recibido del servidor como indica el enunciado, se decidió mantener un conteo local en el contexto de React después de recibir confirmación exitosa desde la API.
 
-## Inicio rápido
+## 🚀 Inicio rápido
 
-### Configuración inicial
+### ⚙️ Configuración inicial
 
 Copiar el archivo de variables de entorno:
 
@@ -52,7 +52,7 @@ Copiar el archivo de variables de entorno:
 cp .env.example .env
 ```
 
-### Desarrollo local
+### 💻 Desarrollo local
 
 ```bash
 # Instalar dependencias
@@ -73,7 +73,7 @@ npm run prettier
 
 La aplicación estará disponible en `http://localhost:5173`
 
-### Con Docker
+### 🐳 Con Docker
 
 ```bash
 # Levantar el proyecto
@@ -88,9 +88,9 @@ make stop
 
 La aplicación estará disponible en `http://localhost:3000`
 
-## Comandos disponibles
+## 📋 Comandos disponibles
 
-### Docker
+### 🐳 Docker
 
 ```bash
 make start    # Construir y ejecutar la aplicación
@@ -99,7 +99,7 @@ make stop     # Detener y eliminar el contenedor
 make clean    # Limpiar contenedor e imágenes
 ```
 
-### NPM
+### 📦 NPM
 
 ```bash
 npm start           # Servidor de desarrollo
@@ -110,7 +110,7 @@ npm run lint        # Ejecutar linter
 npm run prettier    # Formatear código
 ```
 
-## Testing
+## 🧪 Testing
 
 El proyecto mantiene un coverage de tests superior al 80%. Se utilizan tests unitarios para validar:
 
