@@ -10,54 +10,28 @@ Esta es una solución a la prueba técnica propuesta en el archivo [enunciado.pd
 - **Vite** - Build tool y dev server de última generación
 - **JavaScript** - Lenguaje de programación
 
-## Cómo levantar el proyecto
+## 🚀 Inicio Rápido
 
-### Instalación de dependencias
+### Con Docker
 
 ```bash
-npm install
+# Levantar el proyecto
+make run
+
+# Ejecutar tests
+make test
+
+# Detener el proyecto
+make stop
 ```
 
-### Desarrollo
+La aplicación estará disponible en `http://localhost:3000`
 
-Para iniciar el servidor de desarrollo:
-
-```bash
-npm start
-```
-
-El proyecto estará disponible en `http://localhost:5173`
-
-### Build
-
-Para crear una versión de producción:
+## 📋 Comandos Disponibles
 
 ```bash
-npm run build
-```
-
-Los archivos compilados se generarán en la carpeta `dist/`
-
-### Preview
-
-Para previsualizar la versión de producción:
-
-```bash
-npm run preview
-```
-
-### Lint
-
-Para revisar el código con ESLint:
-
-```bash
-npm run lint
-```
-
-### Test
-
-Para ejecutar los tests:
-
-```bash
-npm run test
+make run    # Construir y ejecutar la aplicación
+make test   # Ejecutar tests en Docker
+make stop   # Detener y eliminar el contenedor
+make clean  # Limpiar contenedor e imágenes
 ```
